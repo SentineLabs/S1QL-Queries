@@ -1,0 +1,11 @@
+title: DHCP CalloutDLL
+description: Detects the installation of a Callout DLL via CalloutDlls and CalloutEnabled parameter in Registry, which can be used to execute code in context of the DHCP server
+author: s1_research
+version: 1
+operating_system: windows server
+query: RegistryKeyPath Contains Anycase "Services\DHCPServer\Parameters\Callout"
+created_date: 16-Nov-2020
+last_update: 16-Nov-2020
+tags:
+  - mitre.t1569
+s1ql supported version: 3

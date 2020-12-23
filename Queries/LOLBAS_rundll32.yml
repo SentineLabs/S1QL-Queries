@@ -1,0 +1,11 @@
+title: LOLBAS rundll32
+description: As a type of Living off the Land attack, attackers can use Rundll32 to execute scripts such as JavaScript
+author: s1_research
+version: 1
+operating_system: windows
+query: TgtProcName Contains Anycase "rundll32.exe" and (TgtProcCmdLine Contains Anycase "mshtml,RunHTMLApplication" or TgtProcCmdLine Contains Anycase "javascript:") and EventType = "Process Creation"
+created_date: 15-Nov-2020
+last_update: 15-Nov-2020
+tags:
+  - mitre.t1218.011
+s1ql supported version: 3

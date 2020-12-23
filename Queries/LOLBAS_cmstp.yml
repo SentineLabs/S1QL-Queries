@@ -1,0 +1,11 @@
+title: LOLBAS cmstp
+description: Silently installs a specially formatted local .INF without creating a desktop icon. The .INF file contains a UnRegisterOCXSection section which executes a .SCT file using scrobj.dll.
+author: s1_research
+version: 1
+operating_system: windows
+query: TgtProcName Contains Anycase "cmstp.exe" AND TgtProcCmdLine Contains Anycase " /s " AND EventType = "Process Creation"
+created_date: 15-Nov-2020
+last_update: 15-Nov-2020
+tags:
+  - mitre.t1218.003
+s1ql supported version: 3

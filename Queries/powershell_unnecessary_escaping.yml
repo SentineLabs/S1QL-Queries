@@ -1,0 +1,11 @@
+title: Powershell Unnecessary Escaping 
+description: The use of a backtick to escape which do not need escaping is needless, and is usually seen when an attacker is trying to obfuscate code to bypass detection and alerting.
+author: s1_research
+version: 1
+operating_system: windows
+query: (TgtProcDisplayName containscis "powershell" and TgtProcCmdLine regexp "`[cdeghijklmopqsuwxyz]" and EventType = "Process Creation"
+created_date: 16-Nov-2020
+last_update: 16-Nov-2020
+tags:
+  - mitre.t1059.001
+s1ql supported version: 3
