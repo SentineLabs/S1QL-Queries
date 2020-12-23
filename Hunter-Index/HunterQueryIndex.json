@@ -2,39 +2,48 @@
 	"data": [
 		{
 			"title": "LOLBAS Rundll32",
-			"value": "TgtProcName Contains Anycase \"rundll32.exe\" and (TgtProcCmdLine Contains Anycase \"mshtml,RunHTMLApplication\" or TgtProcCmdLine Contains Anycase \"javascript:\") and EventType = \"Process Creation\""
+			"value": "TgtProcName Contains Anycase \"rundll32.exe\" and (TgtProcCmdLine Contains Anycase \"mshtml,RunHTMLApplication\" or TgtProcCmdLine Contains Anycase \"javascript:\") and EventType = \"Process Creation\"",
+			"uuid": "32ecef11-d021-52ec-8c8b-8d239a977071"
 		},
 		{
 			"title": "LOLBAS regsvr32",
-			"value": "TgtProcName Contains Anycase \"regsvr32.exe\" and TgtProcCmdLine Contains Anycase \"/s /u /n /i:http\" and TgtProcCmdLine Contains Anycase \"scrobj\" and EventType = \"Process Creation\""
+			"value": "TgtProcName Contains Anycase \"regsvr32.exe\" and TgtProcCmdLine Contains Anycase \"/s /u /n /i:http\" and TgtProcCmdLine Contains Anycase \"scrobj\" and EventType = \"Process Creation\"",
+			"uuid": "dea48999-514b-5ad8-be01-cae640dfd870"
 		},
 		{
 			"title": "LOLBAS mshta",
-			"value": "TgtProcName Contains Anycase \"mshta.exe\" and (TgtProcCmdLine Contains Anycase \"javascript:\" or TgtProcCmdLine Contains Anycase \"about:\" or TgtProcCmdLine Contains Anycase \"<script>\" or TgtProcCmdLine Contains Anycase \"vbscript:Execute\")  and EventType = \"Process Creation\""
+			"value": "TgtProcName Contains Anycase \"mshta.exe\" and (TgtProcCmdLine Contains Anycase \"javascript:\" or TgtProcCmdLine Contains Anycase \"about:\" or TgtProcCmdLine Contains Anycase \"<script>\" or TgtProcCmdLine Contains Anycase \"vbscript:Execute\")  and EventType = \"Process Creation\"",
+			"uuid": "f214e732-266f-5053-a817-872d097a8459"
 		},
 		{
 			"title": "LOLBAS CMSTP",
-			"value": "TgtProcName Contains Anycase \"cmstp.exe\" AND TgtProcCmdLine Contains Anycase \" /s \" AND EventType = \"Process Creation\""
+			"value": "TgtProcName Contains Anycase \"cmstp.exe\" AND TgtProcCmdLine Contains Anycase \" /s \" AND EventType = \"Process Creation\"",
+			"uuid": "98b4bba8-4bed-5113-bd96-b475145707c5"
 		},
 		{
 			"title": "Unamanged Powershell",
-			"value": "( SrcProcName  not in (\"powershell.exe\",\"powershell_ise.exe\") and modulepath contains anycase \"System.Management.Automation\" ) AND not ( SrcProcPublisher In (\"MICROSOFT DYNAMIC CODE PUBLISHER\", \"MICROSOFT CORPORATION\", \"MICROSOFT WINDOWS\") AND SrcProcVerifiedStatus = \"verified\" )"
+			"value": "( SrcProcName  not in (\"powershell.exe\",\"powershell_ise.exe\") and modulepath contains anycase \"System.Management.Automation\" ) AND not ( SrcProcPublisher In (\"MICROSOFT DYNAMIC CODE PUBLISHER\", \"MICROSOFT CORPORATION\", \"MICROSOFT WINDOWS\") AND SrcProcVerifiedStatus = \"verified\" )",
+			"uuid": "75a2040e-65a7-53c9-8576-dd9489dd537a"
 		},
 		{
 			"title": "Powershell Unnecessary Escaping",
-			"value": "TgtProcDisplayName containscis \"powershell\" and TgtProcCmdLine regexp \"`[cdeghijklmopqsuwxyz]\" and EventType = \"Process Creation\""
+			"value": "TgtProcDisplayName containscis \"powershell\" and TgtProcCmdLine regexp \"`[cdeghijklmopqsuwxyz]\" and EventType = \"Process Creation\"",
+			"uuid": "6fd09138-a1bd-5a9b-b157-09a0bcf3afc5"
 		},
 		{
 			"title": "Suspicious Data Compression",
-			"value": "EventType = \"Process Creation\" and TgtProcCmdLine  contains anycase \"-hp\" and TgtProcCmdLine regexp \"\\sa\\s.*\\s-hp[^\\s]+\\s\" and TgtProcCmdLine regexp \"\\sa\\s.*\\s-m[0-5]+\\s\""
+			"value": "EventType = \"Process Creation\" and TgtProcCmdLine  contains anycase \"-hp\" and TgtProcCmdLine regexp \"\\sa\\s.*\\s-hp[^\\s]+\\s\" and TgtProcCmdLine regexp \"\\sa\\s.*\\s-m[0-5]+\\s\"",
+			"uuid": "4988493b-e776-5dbf-a65c-e6900fb51103"
 		},
 		{
 			"title": "Removal of Indicators on Host",
-			"value": "EventType = \"Process Creation\" AND TgtProcName Contains Anycase \"fsutil\" AND TgtProcCmdLine Contains Anycase \" usn \" AND TgtProcCmdLine Contains Anycase \" deletejournal\""
+			"value": "EventType = \"Process Creation\" AND TgtProcName Contains Anycase \"fsutil\" AND TgtProcCmdLine Contains Anycase \" usn \" AND TgtProcCmdLine Contains Anycase \" deletejournal\"",
+			"uuid": "8a701320-36f6-56f4-84c6-7934255ce47e"
 		},
 		{
 			"title": "DHCP Callout",
-			"value": "RegistryKeyPath Contains Anycase \"Services\\DHCPServer\\Parameters\\Callout\""
+			"value": "RegistryKeyPath Contains Anycase \"Services\\DHCPServer\\Parameters\\Callout\"",
+			"uuid": "f0a2681e-6643-5e25-a931-d11d199744b5"
 		}
 	]
 }
