@@ -7,5 +7,5 @@ query: EventType = "Process Creation" AND TgtProcName Contains Anycase "fsutil" 
 created_date: 16-Nov-2020
 last_update: 16-Nov-2020
 tags:
-  - mitre.t1070
+  - mitre.T1070
 s1ql supported version: 3

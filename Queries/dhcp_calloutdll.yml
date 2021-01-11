@@ -7,5 +7,5 @@ query: RegistryKeyPath Contains Anycase "Services\DHCPServer\Parameters\Callout"
 created_date: 16-Nov-2020
 last_update: 16-Nov-2020
 tags:
-  - mitre.t1569
+  - mitre.T1569
 s1ql supported version: 3

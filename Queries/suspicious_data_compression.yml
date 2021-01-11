@@ -7,5 +7,5 @@ query: EventType = "Process Creation" and TgtProcCmdLine  contains anycase "-hp"
 created_date: 
 last_update: 16-Nov-2020
 tags:
-  - mitre.t1560.001
+  - mitre.T1560.001
 s1ql supported version: 3

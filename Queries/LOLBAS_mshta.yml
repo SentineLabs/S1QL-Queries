@@ -7,5 +7,5 @@ query: TgtProcName Contains Anycase "mshta.exe" and (TgtProcCmdLine Contains Any
 created_date: 16-Nov-2020
 last_update: 16-Nov-2020
 tags:
-  - mitre.t1218.005
+  - mitre.T1218.005
 s1ql supported version: 3

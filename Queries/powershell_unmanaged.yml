@@ -7,5 +7,5 @@ query: ( SrcProcName  not in ("powershell.exe","powershell_ise.exe") and modulep
 created_date: 20-DEC-2019
 last_update: 16-Nov-2020
 tags:
-  - mitre.t1059.001
+  - mitre.T1059.001
 s1ql supported version: 3

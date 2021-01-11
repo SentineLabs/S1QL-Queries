@@ -7,5 +7,5 @@ query: TgtProcName Contains Anycase "regsvr32.exe" and TgtProcCmdLine Contains A
 created_date: 15-Nov-2020
 last_update: 15-Nov-2020
 tags:
-  - mitre.t1218.010
+  - mitre.T1218.010
 s1ql supported version: 3
