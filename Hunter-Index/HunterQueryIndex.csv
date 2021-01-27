@@ -1,9 +1,0 @@
-LOLBAS Rundll32, TgtProcName Contains Anycase "rundll32.exe" and (TgtProcCmdLine Contains Anycase "mshtml,RunHTMLApplication" or TgtProcCmdLine Contains Anycase "javascript:") and EventType = "Process Creation"
-LOLBAS regsvr32, TgtProcName Contains Anycase "regsvr32.exe" and TgtProcCmdLine Contains Anycase "/s /u /n /i:http" and TgtProcCmdLine Contains Anycase "scrobj" and EventType = "Process Creation"
-LOLBAS mshta, TgtProcName Contains Anycase "mshta.exe" and (TgtProcCmdLine Contains Anycase "javascript:" or TgtProcCmdLine Contains Anycase "about:" or TgtProcCmdLine Contains Anycase "<script>" or TgtProcCmdLine Contains Anycase "vbscript:Execute")  and EventType = "Process Creation"
-LOLBAS CMSTP, TgtProcName Contains Anycase "cmstp.exe" AND TgtProcCmdLine Contains Anycase " /s " AND EventType = "Process Creation"
-Unamanged Powershell, ( SrcProcName  not in ("powershell.exe","powershell_ise.exe") and modulepath contains anycase "System.Management.Automation" ) AND not ( SrcProcPublisher In ("MICROSOFT DYNAMIC CODE PUBLISHER", "MICROSOFT CORPORATION", "MICROSOFT WINDOWS") AND SrcProcVerifiedStatus = "verified" )
-Powershell Unnecessary Escaping, TgtProcDisplayName containscis "powershell" and TgtProcCmdLine regexp "`[cdeghijklmopqsuwxyz]" and EventType = "Process Creation"
-Suspicious Data Compression, EventType = "Process Creation" and TgtProcCmdLine  contains anycase "-hp" and TgtProcCmdLine regexp "\sa\s.*\s-hp[^\s]+\s" and TgtProcCmdLine regexp "\sa\s.*\s-m[0-5]+\s"
-Removal of Indicators on Host, EventType = "Process Creation" AND TgtProcName Contains Anycase "fsutil" AND TgtProcCmdLine Contains Anycase " usn " AND TgtProcCmdLine Contains Anycase " deletejournal"
-DHCP Callout, RegistryKeyPath Contains Anycase "Services\DHCPServer\Parameters\Callout"
