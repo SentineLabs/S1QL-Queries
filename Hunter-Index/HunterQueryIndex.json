@@ -78,12 +78,12 @@
 		{
 			"title": "Sunburst DNS query and response",
 			"description": "The backdoor in sunburst sends a DNS request, we can look for this request coupled with a response",
-			"value": "DnsResponse Contains Anycase ".avsvmcloud" AND DnsRequest In Contains Anycase ("appsync-api", "avsvmcloud.com")",
+			"value": "DnsResponse Contains Anycase \".avsvmcloud\" AND DnsRequest In Contains Anycase (\"appsync-api\", \"avsvmcloud.com\")",
 			"uuid": "f24677fd-f05c-543f-a54d-3630a332c529"
 		},
 		{
 			"title": "Sunburst - Solarwinds starts CMD with suspicious parameters",
-			"description": "Look for instances of the exploited solarwinds process that start cmd.exe with "echo" in the command line",
+			"description": "Look for instances of the exploited solarwinds process that start cmd.exe with 'echo' in the command line",
 			"value": "EventType = \"Process Creation\" AND SrcProcName Contains Anycase \"SolarWinds.BusinessLayerHost.exe\" AND TgtProcName Contains Anycase \"cmd.exe\" AND TgtProcCmdLine Contains Anycase \"echo\"",
 			"uuid": "29edd22e-209a-56b2-8d5f-b4c7783ec38f"
 		},
