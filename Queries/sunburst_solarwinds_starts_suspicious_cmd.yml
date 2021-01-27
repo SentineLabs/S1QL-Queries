@@ -1,0 +1,11 @@
+title: Sunburst - Solarwinds starts CMD with suspicious parameters
+description: Look for instances of the exploited solarwinds process that start cmd.exe with "echo" in the command line
+author: s1_research
+version: 1
+operating_system: windows
+query: EventType = "Process Creation" AND SrcProcName Contains Anycase "SolarWinds.BusinessLayerHost.exe" AND TgtProcName Contains Anycase "cmd.exe" AND TgtProcCmdLine Contains Anycase "echo"
+created_date: 
+last_update: 27-Jan-2021
+tags:
+  - Sunburst
+s1ql supported version: 3
