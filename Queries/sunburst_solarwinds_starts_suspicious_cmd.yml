@@ -4,7 +4,7 @@ author: s1_research
 version: 1
 operating_system: windows
 query: EventType = "Process Creation" AND SrcProcName Contains Anycase "SolarWinds.BusinessLayerHost.exe" AND TgtProcName Contains Anycase "cmd.exe" AND TgtProcCmdLine Contains Anycase "echo"
-created_date: 
+created_date: 27-Jan-2021
 last_update: 27-Jan-2021
 tags:
   - Sunburst
