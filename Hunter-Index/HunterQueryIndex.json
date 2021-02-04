@@ -1,6 +1,13 @@
 {
 	"data": [
 		{
+			"title": "LOLBAS Shell32",
+			"description": "As a type of Living off the Land attack, attackers can use shell32 (through rundll32) to execute dll payloads",
+			"tags": ["T1218.011"],
+			"value": "EventType = \"Process Creation\" AND SrcProcName In AnyCase (\"rundll32.exe\") AND SrcProcCmdLine Contains Anycase \"shell32.dll\" AND (TgtProcName In AnyCase (\"cmd.exe\") AND TgtProcCmdLine Contains \" /c \")  AND NOT (SrcProcParentName = \"msiexec.exe\" OR SrcProcCmdLine Contains \"RunAsNewUser_RunDLL Local\" OR SrcProcCmdLine RegExp \"Control_RunDLL .*\\.cpl\" OR SrcProcCmdLine Contains \"InetCpl.cpl,ClearMyTracksByProcess\" OR SrcProcCmdLine Contains Anycase \":\\autorun.bat\" OR SrcProcCmdLine Contains \"OpenAs_RunDLL\")",
+			"uuid": "56a50cfa-2b2a-5a96-91b0-b8514bae91e8"
+		},
+		{
 			"title": "LOLBAS Rundll32",
 			"description": "As a type of Living off the Land attack, attackers can use Rundll32 to execute scripts such as JavaScript",
 			"tags": ["T1218.011"],
