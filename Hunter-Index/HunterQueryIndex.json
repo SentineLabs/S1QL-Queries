@@ -1,6 +1,13 @@
 {
 	"data": [
 		{
+			"title": "CMD Unnecessary Escaping",
+			"description": "The use of a caret to escape which do not need escaping is needless, and is usually seen when an attacker is trying to obfuscate a command to bypass detection and alerting.",
+			"tags": ["T1059.003"],
+			"value": "EventType = \"Process Creation\" and SrcProcCmdLine RegExp \"[a-zA-Z]\\^[a-zA-Z]\" and (SrcProcName Contains Anycase \"cmd.exe\" or SrcProcDisplayName = \"Windows Command Processor\") and not (TgtProcName In Contains Anycase (\"conhost.exe\") or TgtProcCmdLine RegExp \"[a-zA-Z]\\^[a-zA-Z]\")",
+			"uuid": "cb2e2628-7992-11eb-9439-0242ac130002"
+		},
+		{
 			"title": "LOLBAS Shell32",
 			"description": "As a type of Living off the Land attack, attackers can use shell32 (through rundll32) to execute dll payloads",
 			"tags": ["T1218.011"],
