@@ -118,13 +118,6 @@
 			"tags": [],
 			"value": "Url Contains Anycase \"avsvmcloud.com\" AND not SrcProcName In AnyCase (\"chrome.exe\", \"msedge.exe\", \"iexplore.exe\", \"firefox.exe\", \"opera.exe\")",
 			"uuid": "b63c7252-67ee-5bb0-8f0f-45f47e34306d"
-		},
-		{
-			"title": "Hafnium File Mod or Spawning",
-			"description": "Looks for Hafnium Suspicious file creation or spawning abnormal processes",
-			"tags": ["T1190"],
-			"value": "SrcProcName = \"UMWorkerProcess.exe\" AND ((EventType = \"File Modification\" AND NOT (TgtFilePath EndsWith \"CacheCleanup.bin\" OR TgtFilePath EndsWith \"cleanup.bin\") AND TgtFileExtension Not In (\"txt\", \"LOG\", \"cfg\")) OR ( EventType = \"Process Creation\" AND NOT (TgtProcImagePath EndsWith \"wermgr.exe\" OR TgtProcImagePath EndsWith \"WerFault.exe\")))",
-			"uuid": "89229c38-229e-543a-bd80-c2628c8cad19"
 		}
 	]
 }
