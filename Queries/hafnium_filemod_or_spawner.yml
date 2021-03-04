@@ -1,9 +1,9 @@
-title: Hafnium Filemod or spawning
+title: Hafnium Files or spawning
 description: Looks for Hafnium Suspicious file creation or spawning abnormal processes
 author: s1_research, translated from microsoft
-version: 1
+version: 2
 operating_system: windows server
-query: SrcProcName = "UMWorkerProcess.exe" AND ((EventType = "File Modification" AND NOT (TgtFilePath EndsWith "CacheCleanup.bin" OR TgtFilePath EndsWith "cleanup.bin") AND TgtFileExtension Not In ("txt", "LOG", "cfg")) OR ( EventType = "Process Creation" AND NOT (TgtProcImagePath EndsWith "wermgr.exe" OR TgtProcImagePath EndsWith "WerFault.exe")))
+query: SrcProcName = "UMWorkerProcess.exe" AND ((ObjectType = "file" AND NOT (TgtFilePath EndsWith "CacheCleanup.bin" OR TgtFilePath EndsWith "cleanup.bin") AND TgtFileExtension Not In ("txt", "LOG", "cfg")) OR ( EventType = "Process Creation" AND NOT (TgtProcImagePath EndsWith "wermgr.exe" OR TgtProcImagePath EndsWith "WerFault.exe")))
 created_date: 4-Mar-2021
 last_update: 4-Mar-2021
 tags:
