@@ -1,0 +1,12 @@
+title: China Chopper Web Shell
+description: China Chopper Web Shell
+author: s1_research
+version: 1
+operating_system: windows server
+query: EventType = "Process Creation" And SrcProcName Contains Anycase "w3wp.exe" and TgtProcName Contains Anycase "cmd.exe" And TgtProcCmdLine Contains Anycase "[s]&cd&echo [e]"
+created_date: 8-Mar-2021
+last_update: 8-Mar-2021
+tags:
+  - mitre.T1059.003
+  - mitre.T1505.003
+s1ql supported version: 3

@@ -1,0 +1,11 @@
+title: Webshell Process Spawning
+description: Looks for generic webshell creation on Windows  Servers. This query may require tuning for your environment.
+author: s1_research
+version: 1
+operating_system: windows server
+query: EventType = "Process Creation" And SrcProcName Contains Anycase "w3wp.exe" and TgtProcName in Anycase ("cmd.exe", "powershell.exe", "net.exe", "quser.exe","certutil.exe", "arp.exe","hostname.exe", "whoami.exe", "netstat.exe", "ping.exe", "ipconfig.exe", "wmic.exe", "del.exe")
+created_date: 4-Mar-2021
+last_update: 8-Mar-2021
+tags:
+  - mitre.T1505.003
+s1ql supported version: 3

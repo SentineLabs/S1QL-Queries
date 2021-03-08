@@ -1,0 +1,12 @@
+title: Hafnium Suspicious Process Spawn
+description: Looks for Hafnium Suspicious Process Creation
+author: s1_research, translated from microsoft
+version: 2
+operating_system: windows server
+query: EventType = "Process Creation" and (SrcProcName In AnyCase ("umworkerprocess.exe", "umservice.exe") or (SrcProcName In Anycase ("w3wp.exe") and SrcProcCmdLine Contains Anycase "MSExchange")) and TgtProcImagePath Contains Anycase "system32" and not TgtProcName in anycase ("wermgr.exe", "werfault.exe")
+created_date: 4-Mar-2021
+last_update: 8-Mar-2021
+tags:
+  - mitre.T1190
+  - mitre.T1505.003
+s1ql supported version: 3

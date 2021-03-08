@@ -1,6 +1,34 @@
 {
 	"data": [
 		{
+			"title": "Hafnium Suspicious Process Spawn",
+			"description": "Looks for Hafnium Suspicious Process Creation",
+			"tags": ["T1190", "T1505.003"],
+			"value": "EventType = \"Process Creation\" and (SrcProcName In AnyCase (\"umworkerprocess.exe\", \"umservice.exe\") or (SrcProcName In Anycase (\"w3wp.exe\") and SrcProcCmdLine Contains Anycase \"MSExchange\")) and TgtProcImagePath Contains Anycase \"system32\" and not TgtProcName in anycase (\"wermgr.exe\", \"werfault.exe\")",
+			"uuid": "7469b2fa-37be-589a-8648-1ce55cd80ba2"
+		},
+		{
+			"title": "Hafnium File Creation",
+			"description": "ooks for Hafnium File Creation artifacts",
+			"tags": ["T1105", "T1505.003"],
+			"value": "EventType In (\"File Creation\", \"File Modification\") AND TgtFileExtension contains anycase \"aspx\" AND SrcProcName In AnyCase (\"umworkerprocess.exe\", \"umservice.exe\", \"w3wp.exe\") AND TgtFilePath RegExp \"((inetpub\\wwwroot\\aspnet_client\\(system_web)?)|(FrontEnd\\HttpProxy\\owa\\auth)|(FrontEnd\\HttpProxy\\ecp\\auth))\"",
+			"uuid": "dca0fb59-93b0-5e31-b4c7-631768d5314e"
+		},
+		{
+			"title": "China Chopper Web Shell",
+			"description": "China Chopper Web Shell",
+			"tags": ["T1059.003", "T1505.003"],
+			"value": "EventType = \"Process Creation\" And SrcProcName Contains Anycase \"w3wp.exe\" and TgtProcName Contains Anycase \"cmd.exe\" And TgtProcCmdLine Contains Anycase \"[s]&cd&echo [e]\"",
+			"uuid": "f0fd1fda-8846-5618-a327-e1e7da3af987"
+		},
+		{
+			"title": "Windows Webshell Process Spawning",
+			"description": "Looks for generic webshell creation on Windows  Servers. This query may require tuning for your environment.",
+			"tags": ["T1505.003"],
+			"value": "ventType = \"Process Creation\" And SrcProcName Contains Anycase \"w3wp.exe\" and TgtProcName in Anycase (\"cmd.exe\", \"powershell.exe\", \"net.exe\", \"quser.exe\",\"certutil.exe\", \"arp.exe\",\"hostname.exe\", \"whoami.exe\", \"netstat.exe\", \"ping.exe\", \"ipconfig.exe\", \"wmic.exe\", \"del.exe\")",
+			"uuid": "1527bc93-737d-5369-b151-e3e6beaa5784"
+		},
+		{
 			"title": "CMD Unnecessary Escaping",
 			"description": "The use of a caret to escape which do not need escaping is needless, and is usually seen when an attacker is trying to obfuscate a command to bypass detection and alerting.",
 			"tags": ["T1059.003"],
