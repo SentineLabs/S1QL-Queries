@@ -9,4 +9,5 @@ last_update: 8-Mar-2021
 tags:
   - mitre.T1190
   - mitre.T1505.003
+  - hafnium
 s1ql supported version: 3
