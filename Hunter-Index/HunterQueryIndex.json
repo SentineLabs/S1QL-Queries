@@ -11,7 +11,7 @@
 			"title": "Hafnium File Creation",
 			"description": "ooks for Hafnium File Creation artifacts",
 			"tags": ["T1105", "T1505.003"],
-			"value": "EventType In (\"File Creation\", \"File Modification\") AND TgtFileExtension contains anycase \"aspx\" AND SrcProcName In AnyCase (\"umworkerprocess.exe\", \"umservice.exe\", \"w3wp.exe\") AND TgtFilePath RegExp \"((inetpub\\wwwroot\\aspnet_client\\(system_web)?)|(FrontEnd\\HttpProxy\\owa\\auth)|(FrontEnd\\HttpProxy\\ecp\\auth))\"",
+			"value": "EventType In (\"File Creation\", \"File Modification\") AND TgtFileExtension contains anycase \"aspx\" AND SrcProcName In AnyCase (\"umworkerprocess.exe\", \"umservice.exe\", \"w3wp.exe\") AND TgtFilePath RegExp \"((inetpub\\\\wwwroot\\\\aspnet_client\\\\(system_web)?)|(FrontEnd\\\\HttpProxy\\\\owa\\\\auth)|(FrontEnd\\\\HttpProxy\\\\ecp\\\\auth))\"",
 			"uuid": "dca0fb59-93b0-5e31-b4c7-631768d5314e"
 		},
 		{
