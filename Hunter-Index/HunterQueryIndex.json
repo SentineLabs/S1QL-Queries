@@ -25,7 +25,7 @@
 			"title": "Windows Webshell Process Spawning",
 			"description": "Looks for generic webshell creation on Windows  Servers. This query may require tuning for your environment.",
 			"tags": ["T1505.003"],
-			"value": "ventType = \"Process Creation\" And SrcProcName Contains Anycase \"w3wp.exe\" and TgtProcName in Anycase (\"cmd.exe\", \"powershell.exe\", \"net.exe\", \"quser.exe\",\"certutil.exe\", \"arp.exe\",\"hostname.exe\", \"whoami.exe\", \"netstat.exe\", \"ping.exe\", \"ipconfig.exe\", \"wmic.exe\", \"del.exe\")",
+			"value": "EventType = \"Process Creation\" And SrcProcName Contains Anycase \"w3wp.exe\" and TgtProcName in Anycase (\"cmd.exe\", \"powershell.exe\", \"net.exe\", \"quser.exe\",\"certutil.exe\", \"arp.exe\",\"hostname.exe\", \"whoami.exe\", \"netstat.exe\", \"ping.exe\", \"ipconfig.exe\", \"wmic.exe\", \"del.exe\")",
 			"uuid": "1527bc93-737d-5369-b151-e3e6beaa5784"
 		},
 		{
