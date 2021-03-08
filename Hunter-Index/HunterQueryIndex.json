@@ -4,21 +4,21 @@
 			"title": "Hafnium Suspicious Process Spawn",
 			"description": "Looks for Hafnium Suspicious Process Creation",
 			"tags": ["T1190", "T1505.003"],
-			"value": "EventType = \"Process Creation\" and (SrcProcName In AnyCase (\"umworkerprocess.exe\", \"umservice.exe\") or (SrcProcName In Anycase (\"w3wp.exe\") and SrcProcCmdLine Contains Anycase \"MSExchange\")) and TgtProcImagePath Contains Anycase \"system32\" and not TgtProcName in anycase (\"wermgr.exe\", \"werfault.exe\")",
+			"value": "--hafnium\nEventType = \"Process Creation\" and (SrcProcName In AnyCase (\"umworkerprocess.exe\", \"umservice.exe\") or (SrcProcName In Anycase (\"w3wp.exe\") and SrcProcCmdLine Contains Anycase \"MSExchange\")) and TgtProcImagePath Contains Anycase \"system32\" and not TgtProcName in anycase (\"wermgr.exe\", \"werfault.exe\")",
 			"uuid": "7469b2fa-37be-589a-8648-1ce55cd80ba2"
 		},
 		{
 			"title": "Hafnium File Creation",
-			"description": "ooks for Hafnium File Creation artifacts",
+			"description": "Looks for Hafnium File Creation artifacts",
 			"tags": ["T1105", "T1505.003"],
-			"value": "EventType In (\"File Creation\", \"File Modification\") AND TgtFileExtension contains anycase \"aspx\" AND SrcProcName In AnyCase (\"umworkerprocess.exe\", \"umservice.exe\", \"w3wp.exe\") AND TgtFilePath RegExp \"((inetpub\\\\wwwroot\\\\aspnet_client\\\\(system_web)?)|(FrontEnd\\\\HttpProxy\\\\owa\\\\auth)|(FrontEnd\\\\HttpProxy\\\\ecp\\\\auth))\"",
+			"value": "--hafnium\nEventType In (\"File Creation\", \"File Modification\") AND TgtFileExtension contains anycase \"aspx\" AND SrcProcName In AnyCase (\"umworkerprocess.exe\", \"umservice.exe\", \"w3wp.exe\") AND TgtFilePath RegExp \"((inetpub\\\\wwwroot\\\\aspnet_client\\\\(system_web)?)|(FrontEnd\\\\HttpProxy\\\\owa\\\\auth)|(FrontEnd\\\\HttpProxy\\\\ecp\\\\auth))\"",
 			"uuid": "dca0fb59-93b0-5e31-b4c7-631768d5314e"
 		},
 		{
 			"title": "China Chopper Web Shell",
 			"description": "China Chopper Web Shell",
 			"tags": ["T1059.003", "T1505.003"],
-			"value": "EventType = \"Process Creation\" And SrcProcName Contains Anycase \"w3wp.exe\" and TgtProcName Contains Anycase \"cmd.exe\" And TgtProcCmdLine Contains Anycase \"[s]&cd&echo [e]\"",
+			"value": "--hafnium\nEventType = \"Process Creation\" And SrcProcName Contains Anycase \"w3wp.exe\" and TgtProcName Contains Anycase \"cmd.exe\" And TgtProcCmdLine Contains Anycase \"[s]&cd&echo [e]\"",
 			"uuid": "f0fd1fda-8846-5618-a327-e1e7da3af987"
 		},
 		{
