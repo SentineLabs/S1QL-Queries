@@ -3,7 +3,9 @@ description: System.Management.Automation DLL use by Non Microsoft-Signed Binari
 author: s1_research
 version: 1.1
 operating_system: windows
-query: ( SrcProcName  not in ("powershell.exe","powershell_ise.exe") and modulepath contains anycase "System.Management.Automation" ) AND not ( SrcProcPublisher In ("MICROSOFT DYNAMIC CODE PUBLISHER", "MICROSOFT CORPORATION", "MICROSOFT WINDOWS") AND SrcProcVerifiedStatus = "verified" )
+query: |-
+  --Powershell Unmanaged
+  ( SrcProcName  not in ("powershell.exe","powershell_ise.exe") and modulepath contains anycase "System.Management.Automation" ) AND not ( SrcProcPublisher In ("MICROSOFT DYNAMIC CODE PUBLISHER", "MICROSOFT CORPORATION", "MICROSOFT WINDOWS") AND SrcProcVerifiedStatus = "verified" )
 created_date: 20-DEC-2019
 last_update: 16-Nov-2020
 tags:

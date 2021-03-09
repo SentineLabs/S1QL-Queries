@@ -3,7 +3,9 @@ description: Looks for Hafnium File Creation artifacts
 author: s1_research, translated from microsoft
 version: 2
 operating_system: windows server
-query: EventType In ("File Creation", "File Modification") AND TgtFileExtension contains anycase "aspx" AND SrcProcName In AnyCase ("umworkerprocess.exe", "umservice.exe", "w3wp.exe") AND TgtFilePath RegExp "((inetpub\\wwwroot\\aspnet_client\\(system_web)?)|(FrontEnd\\HttpProxy\\owa\\auth)|(FrontEnd\\HttpProxy\\ecp\\auth))"
+query: |-
+  --Hafnium File Creation
+  EventType In ("File Creation", "File Modification") AND TgtFileExtension contains anycase "aspx" AND SrcProcName In AnyCase ("umworkerprocess.exe", "umservice.exe", "w3wp.exe") AND TgtFilePath RegExp "((inetpub\\wwwroot\\aspnet_client\\(system_web)?)|(FrontEnd\\HttpProxy\\owa\\auth)|(FrontEnd\\HttpProxy\\ecp\\auth))"
 created_date: 4-Mar-2021
 last_update: 8-Mar-2021
 tags:

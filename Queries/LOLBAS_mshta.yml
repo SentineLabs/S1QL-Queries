@@ -3,7 +3,9 @@ description: As a type of Living off the Land attack, attackers can use MSHTA to
 author: s1_research
 version: 1
 operating_system: windows
-query: TgtProcName Contains Anycase "mshta.exe" and (TgtProcCmdLine Contains Anycase "javascript:" or TgtProcCmdLine Contains Anycase "about:" or TgtProcCmdLine Contains Anycase "<script>" or TgtProcCmdLine Contains Anycase "vbscript:Execute")  and EventType = "Process Creation"
+query: |-
+  --LOLBAS mshta
+  TgtProcName Contains Anycase "mshta.exe" and (TgtProcCmdLine Contains Anycase "javascript:" or TgtProcCmdLine Contains Anycase "about:" or TgtProcCmdLine Contains Anycase "<script>" or TgtProcCmdLine Contains Anycase "vbscript:Execute")  and EventType = "Process Creation"
 created_date: 16-Nov-2020
 last_update: 16-Nov-2020
 tags:

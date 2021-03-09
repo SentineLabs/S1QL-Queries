@@ -3,7 +3,9 @@ description: Look for traffic to the known sunburst C&C
 author: s1_research
 version: 1
 operating_system: windows
-query: Url Contains Anycase "avsvmcloud.com" AND not SrcProcName In AnyCase ("chrome.exe", "msedge.exe", "iexplore.exe", "firefox.exe", "opera.exe")
+query: |-
+  --Sunburst C&C
+  Url Contains Anycase "avsvmcloud.com" AND not SrcProcName In AnyCase ("chrome.exe", "msedge.exe", "iexplore.exe", "firefox.exe", "opera.exe")
 created_date: 27-Jan-2021
 last_update: 27-Jan-2021
 tags:

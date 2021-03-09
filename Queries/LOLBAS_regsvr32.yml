@@ -3,7 +3,9 @@ description: As a type of Living off the Land attack, attackers can use regsvr32
 author: s1_research
 version: 1
 operating_system: windows
-query: TgtProcName Contains Anycase "regsvr32.exe" and TgtProcCmdLine Contains Anycase "/s /u /n /i:http" and TgtProcCmdLine Contains Anycase "scrobj" and EventType = "Process Creation"
+query: |-
+  --LOLBAS regsvr32
+  TgtProcName Contains Anycase "regsvr32.exe" and TgtProcCmdLine Contains Anycase "/s /u /n /i:http" and TgtProcCmdLine Contains Anycase "scrobj" and EventType = "Process Creation"
 created_date: 15-Nov-2020
 last_update: 15-Nov-2020
 tags:

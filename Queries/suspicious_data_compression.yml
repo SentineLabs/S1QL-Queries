@@ -3,7 +3,9 @@ description: Advesaries may create an encrypted rar archive with specific compre
 author: s1_research
 version: 1
 operating_system: windows
-query: EventType = "Process Creation" and TgtProcCmdLine  contains anycase "-hp" and TgtProcCmdLine regexp "\sa\s.*\s-hp[^\s]+\s" and TgtProcCmdLine regexp "\sa\s.*\s-m[0-5]+\s"
+query: |-
+  --Suspicious Data Compression
+  EventType = "Process Creation" and TgtProcCmdLine  contains anycase "-hp" and TgtProcCmdLine regexp "\sa\s.*\s-hp[^\s]+\s" and TgtProcCmdLine regexp "\sa\s.*\s-m[0-5]+\s"
 created_date: 
 last_update: 16-Nov-2020
 tags:

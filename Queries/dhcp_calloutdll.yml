@@ -3,7 +3,9 @@ description: Detects the installation of a Callout DLL via CalloutDlls and Callo
 author: s1_research
 version: 1
 operating_system: windows server
-query: RegistryKeyPath Contains Anycase "Services\DHCPServer\Parameters\Callout"
+query: |-
+  --DHCP CalloutDLL
+  RegistryKeyPath Contains Anycase "Services\DHCPServer\Parameters\Callout"
 created_date: 16-Nov-2020
 last_update: 16-Nov-2020
 tags:

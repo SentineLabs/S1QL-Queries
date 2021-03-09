@@ -3,7 +3,9 @@ description: As a type of Living off the Land attack, attackers can use shell32 
 author: s1_research
 version: 1
 operating_system: windows
-query: EventType = "Process Creation" AND SrcProcName In AnyCase ("rundll32.exe") AND SrcProcCmdLine Contains Anycase "shell32.dll" AND (TgtProcName In AnyCase ("cmd.exe") AND TgtProcCmdLine Contains " /c ")  AND NOT (SrcProcParentName = "msiexec.exe" OR SrcProcCmdLine Contains "RunAsNewUser_RunDLL Local" OR SrcProcCmdLine RegExp "Control_RunDLL .*\.cpl" OR SrcProcCmdLine Contains "InetCpl.cpl,ClearMyTracksByProcess" OR SrcProcCmdLine Contains Anycase ":\autorun.bat" OR SrcProcCmdLine Contains "OpenAs_RunDLL")
+query: |-
+  --LOBAS shell32
+  EventType = "Process Creation" AND SrcProcName In AnyCase ("rundll32.exe") AND SrcProcCmdLine Contains Anycase "shell32.dll" AND (TgtProcName In AnyCase ("cmd.exe") AND TgtProcCmdLine Contains " /c ")  AND NOT (SrcProcParentName = "msiexec.exe" OR SrcProcCmdLine Contains "RunAsNewUser_RunDLL Local" OR SrcProcCmdLine RegExp "Control_RunDLL .*\.cpl" OR SrcProcCmdLine Contains "InetCpl.cpl,ClearMyTracksByProcess" OR SrcProcCmdLine Contains Anycase ":\autorun.bat" OR SrcProcCmdLine Contains "OpenAs_RunDLL")
 created_date: 31-Jan-2021
 last_update: 31-Jan-2021
 tags:

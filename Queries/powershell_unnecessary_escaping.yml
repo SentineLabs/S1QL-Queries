@@ -3,7 +3,9 @@ description: The use of a backtick to escape which do not need escaping is needl
 author: s1_research
 version: 1
 operating_system: windows
-query: (TgtProcDisplayName containscis "powershell" and TgtProcCmdLine regexp "`[cdeghijklmopqsuwxyz]" and EventType = "Process Creation"
+query: |-
+  --Powershell Unnecessary Escaping 
+  (TgtProcDisplayName containscis "powershell" and TgtProcCmdLine regexp "`[cdeghijklmopqsuwxyz]" and EventType = "Process Creation"
 created_date: 16-Nov-2020
 last_update: 16-Nov-2020
 tags:

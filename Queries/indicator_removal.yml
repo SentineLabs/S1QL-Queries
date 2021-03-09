@@ -3,7 +3,9 @@ description: The USN jounral provides a list of filesystem changes to userspace 
 author: s1_research
 version: 1
 operating_system: windows
-query: EventType = "Process Creation" AND TgtProcName Contains Anycase "fsutil" AND TgtProcCmdLine Contains Anycase " usn " AND TgtProcCmdLine Contains Anycase " deletejournal"
+query: |-
+  --Removal of indicators on Host
+  EventType = "Process Creation" AND TgtProcName Contains Anycase "fsutil" AND TgtProcCmdLine Contains Anycase " usn " AND TgtProcCmdLine Contains Anycase " deletejournal"
 created_date: 16-Nov-2020
 last_update: 16-Nov-2020
 tags:

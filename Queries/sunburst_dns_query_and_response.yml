@@ -3,7 +3,9 @@ description: The backdoor in sunburst sends a DNS request, we can look for this 
 author: s1_research
 version: 1
 operating_system: windows
-query: DnsResponse Contains Anycase ".avsvmcloud" AND DnsRequest In Contains Anycase ("appsync-api", "avsvmcloud.com")
+query: |-
+  --Sunburst DNS
+  DnsResponse Contains Anycase ".avsvmcloud" AND DnsRequest In Contains Anycase ("appsync-api", "avsvmcloud.com")
 created_date: 27-Jan-2021
 last_update: 27-Jan-2021
 tags:
