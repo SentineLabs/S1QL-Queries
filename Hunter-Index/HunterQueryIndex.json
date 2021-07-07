@@ -2,7 +2,7 @@
 	"data": [
 		{
 			"title": "Kaseya Ransomware Detection",
-			"description": "Looks for Kaseya Ransomware Patterns",
+			"description": "Looks for Kaseya REvil Ransomware Attack Patterns",
 			"tags": ["Kaseya"],
 			"value": "--Kaseya\nEventType = \"Process Creation\" and SrcProcName Contains Anycase \"cmd.exe\" and TgtProcName Contains Anycase \"ping.exe\" and SrcProcCmdLine RegExp \"/c ping 127.0.0.1 -n \\d+ > nul \\&.*MpPreference\"",
 			"uuid": "d04eeb9f-f752-4c14-bcb0-23d6402eefca"
