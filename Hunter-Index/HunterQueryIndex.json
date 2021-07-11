@@ -8,6 +8,13 @@
 			"uuid": "d04eeb9f-f752-4c14-bcb0-23d6402eefca"
 		},
 		{
+			"title": "Hunting Query for Suspected PrintNightmare Exploit Attempts",
+			"description": "Looks for PrinterNightmare patterns",
+			"tags": ["PrinterNightmare"],
+			"value": "--PrinterNightmare\nEventType In ( \"File Rename\",\"File Creation\" ) AND TgtFilePath ContainsCIS \"spool\\drivers\\x64\" AND TgtFilePath ContainsCIS \"Old\"  AND TgtFilePath ContainsCIS \"dll\"  AND TgtFileIsSigned != \"signed\" AND  AgentMachineType In ( \"Server\" )",
+			"uuid": "7ea0ef91-b979-4fec-9db5-bcbcc9fb1a99"
+		},
+		{
 			"title": "Hafnium Suspicious Process Spawn",
 			"description": "Looks for Hafnium Suspicious Process Creation",
 			"tags": ["Hafnium", "T1190", "T1505.003"],
