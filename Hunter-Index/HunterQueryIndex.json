@@ -1,6 +1,13 @@
 {
 	"data": [
 		{
+			"title": "Suspected exploitation of unpatched Windows privilege escalation flaw (CVE-2021-36934)",
+			"description": "Looks for suspected unpatched Windows privilege escalation flaw (CVE-2021-36934)",
+			"tags": ["CVE-2021-36934", "HiveNightmare"],
+			"value": "IndicatorName = \"VssCredsHarvesting\" and SrcProcIntegrityLevel in (\"MEDIUM\", \"LOW\",\"INTEGRITY_LEVEL_UNKNOWN\")",
+			"uuid": "ad0381cc-7913-47cc-8247-93bcc0932974"
+		},
+		{
 			"title": "SolarWinds (Serv-U) activity - process creation",
 			"description": "Looks for suspected SolarWinds (Serv-U) activity - process creation",
 			"tags": ["Serv-U"],
