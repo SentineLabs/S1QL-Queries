@@ -1,6 +1,27 @@
 {
 	"data": [
 		{
+			"title": "Suspected exploitation of unpatched Windows privilege escalation flaw (CVE-2021-36934)",
+			"description": "Looks for suspected unpatched Windows privilege escalation flaw (CVE-2021-36934)",
+			"tags": ["CVE-2021-36934", "HiveNightmare"],
+			"value": "IndicatorName = \"VssCredsHarvesting\" and SrcProcIntegrityLevel in (\"MEDIUM\", \"LOW\",\"INTEGRITY_LEVEL_UNKNOWN\")",
+			"uuid": "ad0381cc-7913-47cc-8247-93bcc0932974"
+		},
+		{
+			"title": "SolarWinds (Serv-U) activity - process creation",
+			"description": "Looks for suspected SolarWinds (Serv-U) activity - process creation",
+			"tags": ["Serv-U"],
+			"value": "--Serv-U\nEndpointOS = \"windows\" AND EventType = \"Process Creation\" AND SrcProcName Contains anycase \"Serv-U\" and TgtProcName In Contains Anycase (\"mshta.exe\", \"cmd.exe\",\"powershell\")",
+			"uuid": "83b59bf3-852b-4163-9417-921d84979f3c"
+		},
+		{
+			"title": "SolarWinds (Serv-U) activity - C2 communication",
+			"description": "Looks for suspected SolarWinds (Serv-U) activity - C2 communication",
+			"tags": ["Serv-U"],
+			"value": "--Serv-U\nEndpointOS = \"windows\" and DstIP In (\"144.34.179.162\",\"98.176.196.89\",\"68.235.178.32\",\"208.113.35.58\",\"144.34.179.162\",\"97.77.97.58\")",
+			"uuid": "769c002b-0c36-40ba-8b66-0c0c19891e41"
+		},
+		{
 			"title": "Kaseya Ransomware Detection",
 			"description": "Looks for Kaseya REvil Ransomware Attack Patterns",
 			"tags": ["Kaseya"],
