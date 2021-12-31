@@ -1,6 +1,20 @@
 {
 	"data": [
 		{
+			"title": "SquirrelWaffle/Qakbot Loader Behavior",
+			"description": "SquirrelWaffle is delivered through a dropper, a malicious Excel or Word document, which contains XLM macros that execute PowerShell to retrieve and launch the SquirrelWaffle loader. This query hunts for the dropper's attempt to do so. As of December 30, 2021, the latest attacks using this method are attributed to Qakbot, and this query hunts for Qakbot's attacks as well.",
+			"tags": ["SquirrelWaffle"],
+			"value": "EndpointOS = \"windows\" AND EventType = \"Process Creation\" AND SrcProcName In Anycase (\"excel.exe\", \"winword.exe\") AND TgtProcDisplayName In (\"Microsoft(C) Register Server\",\"Windows host process (Rundll32)\") AND TgtProcCmdLine Contains Anycase \".ocx\" AND NOT TgtProcCmdLine Contains Anycase \"Windows\\system32\\msscript.ocx\"",
+			"uuid": "6f3738d1-6a1b-11ec-810f-d0abd5772f08"
+		},
+		{
+			"title": "SquirrelWaffle Loader Known Versions",
+			"description": "Hunt for known file names of the SquirrelWaffle loader. The list is subject to updates as new versions of SquirrelWaffle loaders with other file names are being detected in the wild.",
+			"tags": ["SquirrelWaffle"],
+			"value": "EndpointOS = \"windows\" AND EventType = \"Process Creation\" AND TgtProcDisplayName = \"Microsoft(C) Register Server\" AND TgtProcCmdLine in Contains Anycase (\"test.test\",\"test1.test\",\"test2.test\",\"good.good\",\"good1.good\",\"good2.good\",\"ww1.dll\",\"ww2.dll\",\"ww3.dll\",\"ww4.dll\",\"ww5.dll\",\"besta.ocx\",\"bestb.ocx\",\"bestc.ocx\",\"volet1.ocx\",\"volet2.ocx\",\"volet3.ocx\",\"tot1.ocx\",\"tot2.ocx\",\"tot3.ocx\",\"rex1.ocx\",\"rex2.ocx\",\"rex3.ocx\")",
+			"uuid": "8688fe92-6a1b-11ec-abbc-d0abd5772f08"
+		},
+		{
 			"title": "Vulnerable Log4j2 versions (CVE-2021-44228)",
 			"description": "Hunt for known hashes of the vulnerable log4j library. A machine that returns results will likely run an application that is vulnerable (yet, in some cases, the library might not be in use / might run in a non-exploitable context) to CVE-2021-44228. Applications that match this query should be updated.",
 			"tags": ["CVE-2021-44228", "Log4j2"],
